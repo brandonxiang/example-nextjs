@@ -1,4 +1,4 @@
-import {Page, getPrerenderProps} from '../Components/Home';
+import {Page, getPrerenderProps} from '../modules/Home';
 import {useEffect, useState} from 'react';
 
 const CSR = () => {
