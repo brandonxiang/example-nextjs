@@ -1,30 +1,37 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 基于next.js的ssr，csr，ssg
 
-## Getting Started
+最新版本的nextjs可以同时支持ssr，csr，ssg这三种模式。
 
-First, run the development server:
+- index.js (ssr模式)
+- index_csr.js (csr模式)
+- index_ssg.js (ssg模式)
 
-```bash
-npm run dev
-# or
-yarn dev
+### ssr模式
+
+ssr的部署采用以下命令，访问链接http://localhost:3000/?_limits=6
+
+url参数会传递到页面中
+
+```
+npm run build
+npm run start
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### csr模式
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+csr的部署采用以下命令，访问链接http://localhost:3000/index_csr?_limits=6
 
-## Learn More
+url参数会传递到页面中
 
-To learn more about Next.js, take a look at the following resources:
+```
+npm run export
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### ssg模式
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+ssg的部署采用以下命令，访问链接http://localhost:3000/index_ssg
 
-## Deploy on Vercel
+```
+LIMTS=15 npm run export
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/import?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.

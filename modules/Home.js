@@ -18,8 +18,9 @@ function Home({ photos }) {
   )
 }
 
-export const getPrerenderProps =  async () => {
-  const res = await axios.get('https://jsonplaceholder.typicode.com/photos?_limit=20')
+export const getPrerenderProps =  async (ctx) => {
+  const _limits =  (ctx && ctx.query && ctx.query._limits) || process.env.limits ||0;
+  const res = await axios.get('https://jsonplaceholder.typicode.com/photos?_limit=' + _limits)
   return { props:{photos: res.data} }
 }
 
