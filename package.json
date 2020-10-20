@@ -3,15 +3,20 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "node scripts/dev.js",
     "build": "next build",
     "start": "next start",
-    "export": "next build && next export"
+    "build:csr": "node scripts/csr.js",
+    "build:ssg": "node scripts/ssg.js",
+    "build:ssr": "node scripts/ssr.js"
   },
   "dependencies": {
     "axios": "^0.20.0",
     "next": "9.5.3",
     "react": "16.13.1",
     "react-dom": "16.13.1"
+  },
+  "devDependencies": {
+    "shelljs": "^0.8.4"
   }
 }

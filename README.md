@@ -13,7 +13,7 @@ ssr的部署采用以下命令，访问链接http://localhost:3000/?_limits=6
 url参数会传递到页面中
 
 ```
-npm run build
+npm run build:ssr
 npm run start
 ```
 
@@ -24,7 +24,7 @@ csr的部署采用以下命令，访问链接http://localhost:3000/index_csr?_li
 url参数会传递到页面中
 
 ```
-npm run export
+npm run build:csr
 ```
 
 ### ssg模式
@@ -32,6 +32,13 @@ npm run export
 ssg的部署采用以下命令，访问链接http://localhost:3000/index_ssg
 
 ```
-LIMTS=15 npm run export
+LIMTS=15 npm run build:ssg
 ```
 
+### 开发模式
+
+同时执行ssr模式，csr模式，ssg模式
+
+```
+LIMITS=15 npm run dev
+```
